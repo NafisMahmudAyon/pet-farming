@@ -1,30 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import LightGallery from "lightgallery/react";
 
-// import styles
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
 
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/css";
-import "@splidejs/react-splide/css/skyblue";
 
-// import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
 
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
 
-import ImageViewer from "awesome-image-viewer";
 
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
 
-import Masonry from "react-masonry-component";
 
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
+
+
+
+
+
 import "./App.css";
 
 const ImageSlider = ({ images }) => {
