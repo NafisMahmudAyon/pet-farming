@@ -1,17 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-
-
-
-
-
-
-
-
-
-
-
-
 import "./App.css";
 
 const ImageSlider = ({ images }) => {
@@ -47,6 +35,7 @@ const ImageSlider = ({ images }) => {
 			<img
 				src={images[currentIndex]}
 				alt={`Slide ${currentIndex + 1}`}
+				loading="lazy"
 				className="w-[100vw] h-[520px] lg:h-[560px] object-cover shadow-lg"
 			/>
 			<button
@@ -54,41 +43,6 @@ const ImageSlider = ({ images }) => {
 				className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded">
 				Next
 			</button>
-		</div>
-	);
-};
-
-const MasonryGrid = ({ images }) => {
-	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-			{images.map((photo, index) => (
-				<div key={index} className="masonry-item rounded-lg shadow-md">
-					<img
-						src={photo}
-						alt={`Photo ${index + 1}`}
-						className="w-full h-auto rounded-lg"
-						// style={{ aspectRatio: '1 / 1' }} // Maintain aspect ratio
-					/>
-				</div>
-			))}
-		</div>
-	);
-};
-
-const JustifiedGrid = ({ images }) => {
-	return (
-		<div className="flex flex-wrap -mx-2">
-			{images.map((photo, index) => (
-				<div
-					key={index}
-					className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2 mb-4">
-					<img
-						src={photo}
-						alt={`Photo ${index + 1}`}
-						className="w-full h-auto rounded-lg"
-					/>
-				</div>
-			))}
 		</div>
 	);
 };
@@ -138,6 +92,7 @@ const Midjourney = ({ images }) => {
 									<img
 										src={image}
 										alt="info"
+										loading="lazy"
 										onClick={() => openImage(index)}
 									/>
 								</article>
@@ -151,7 +106,11 @@ const Midjourney = ({ images }) => {
 							<span className="close" onClick={closeImage}>
 								&times;
 							</span>
-							<img src={listOfImages[selectedImageIndex]} alt="Popup" />
+							<img
+								src={listOfImages[selectedImageIndex]}
+								loading="lazy"
+								alt="Popup"
+							/>
 							<div className="nav-buttons absolute top-1/2 left-1/2  ">
 								<button onClick={goToPrevious} className="text-black">
 									Previous
@@ -469,6 +428,7 @@ function App() {
 					<img
 						src="https://i.ibb.co/mS9W6QC/IMG-20231111-165609-106.jpg"
 						alt=""
+						loading="lazy"
 					/>
 					<div className="p-3 w-full ">
 						<h1 className="text-3xl text-center ">Lal</h1>
@@ -486,6 +446,7 @@ function App() {
 					<img
 						src="https://i.ibb.co/mS9W6QC/IMG-20231111-165609-106.jpg"
 						alt=""
+						loading="lazy"
 					/>
 					<div className="p-3 w-full ">
 						<h1 className="text-3xl text-center ">Chompa</h1>
